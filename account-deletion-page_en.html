@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Deletion Request</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 40px;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+        .delete-button {
+            background-color: #ff4d4d;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+        .delete-button:hover {
+            background-color: #cc0000;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Request Account Deletion</h1>
+    <p>If you wish to delete your account and associated data, click the button below to send a request via email.</p>
+    
+    <button class="delete-button" onclick="requestDeletion()">Request Account Deletion</button>
+
+    <script>
+        function requestDeletion() {
+            var email = "marianna@online-tribes.com"; 
+            var subject = encodeURIComponent("Account Deletion Request");
+            var body = encodeURIComponent("Hello,\n\nI would like to request the deletion of my account.\n\nMy details:\n- Name: \n- Email: \n- Username: \n\nPlease confirm when the deletion is complete.\n\nThank you.");
+            
+            window.location.href = "mailto:" + email + "?subject=" + subject + "&body=" + body;
+        }
+    </script>
+
+</body>
+</html>
